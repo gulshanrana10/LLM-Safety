@@ -1,0 +1,10 @@
+recognizers:
+  -
+    name: "CSP Recognizer"
+    supported_language: "en"
+    supported_entity: "ORGANIZATION"
+    deny_list:
+      - ATandT
+      - Vz
+      - VZW
+      - telus

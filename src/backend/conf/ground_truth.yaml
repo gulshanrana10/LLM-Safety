@@ -1,0 +1,23 @@
+texts:
+  - text: "I use Verizon for my phone services."
+    annotations:
+      - entity: "ORGANIZATION"
+        value: "Verizon"
+        start: 7
+        end: 14
+  - text: "My friend uses AT&T, the best CSP."
+    annotations:
+      - entity: "ORGANIZATION"
+        value: "AT&T"
+        start: 17
+        end: 21
+  - text: "In TELUS, AUSF_UDM uses external HSM."
+    annotations:
+      - entity: "ORGANIZATION"
+        value: "TELUS"
+        start: 3
+        end: 8
+      - entity: "ORGANIZATION"
+        value: "AUSF_UDM"
+        start: 10
+        end: 18
