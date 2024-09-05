@@ -26,7 +26,7 @@ def print_config_details(config):
     print(f"│ Entities to Anonymize: {', '.join(config['entities']):<30} ")
     print(f"│ Provider: {config['provider'].__name__: <30} ")
     print(f"│ Ground Truth File: {config['ground_truth'] if config['ground_truth'] else 'None':<30}")
-    print(f"╰─────────────────────────────────────────────────────────────╯\n")
+    print(f"├─────────────────────────────────────────────────────────────┤")
     
 
 if __name__ == "__main__":
@@ -69,3 +69,4 @@ if __name__ == "__main__":
                               models_file=config["models"], 
                               entities=config["entities"])
         anonymizer.do_anonymize(texts, true_annotations=true_annotations)
+        print(f"╰─────────────────────────────────────────────────────────────╯\n")

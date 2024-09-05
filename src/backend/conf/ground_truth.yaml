@@ -21,3 +21,55 @@ texts:
         value: "AUSF_UDM"
         start: 10
         end: 18
+  - text: "Elon Musk founded SpaceX and Tesla."
+    annotations:
+      - entity: "PERSON"
+        value: "Elon Musk"
+        start: 0
+        end: 9
+      - entity: "ORGANIZATION"
+        value: "SpaceX"
+        start: 17
+        end: 23
+      - entity: "ORGANIZATION"
+        value: "Tesla"
+        start: 28
+        end: 33
+  - text: "Barack Obama served as the 44th President of the United States."
+    annotations:
+      - entity: "PERSON"
+        value: "Barack Obama"
+        start: 0
+        end: 12
+  - text: "Apple Inc. and Google LLC are major tech companies."
+    annotations:
+      - entity: "ORGANIZATION"
+        value: "Apple Inc."
+        start: 0
+        end: 10
+      - entity: "ORGANIZATION"
+        value: "Google LLC"
+        start: 15
+        end: 25
+  - text: "Meryl Streep won an Oscar for her role in 'The Devil Wears Prada'."
+    annotations:
+      - entity: "PERSON"
+        value: "Meryl Streep"
+        start: 0
+        end: 12
+  - text: "The United Nations is headquartered in New York City."
+    annotations:
+      - entity: "ORGANIZATION"
+        value: "United Nations"
+        start: 4
+        end: 18
+  - text: "Steve Jobs was the co-founder of Apple Inc."
+    annotations:
+      - entity: "PERSON"
+        value: "Steve Jobs"
+        start: 0
+        end: 10
+      - entity: "ORGANIZATION"
+        value: "Apple Inc."
+        start: 29
+        end: 39

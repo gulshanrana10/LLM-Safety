@@ -2,9 +2,13 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 from collections import defaultdict
 
 def calculate_metrics(true_entities, predicted_entities):
-    # Debugging: Print the inputs
-    print("True Entities:", true_entities)
-    print("Predicted Entities:", predicted_entities)
+    # Debugging: Print the inputs for verification
+    print("\n\t\t╭─────────────────────────────────────────────────────────────╮")
+    print("\t\t│ Debugging: Inputs for Metric Calculation                  │")
+    print("\t\t├─────────────────────────────────────────────────────────────┤")
+    print(f"\t\t│ True Entities: {true_entities}                             ")
+    print(f"\t\t│ Predicted Entities: {predicted_entities}                   ")
+    print("\t\t╰─────────────────────────────────────────────────────────────╯\n")
 
     # Initialize labels
     true_labels = []

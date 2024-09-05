@@ -22,9 +22,9 @@ class DefaultAnonymizer(Anonymizer):
         else:
             results = analyzer.analyze(text=texts, entities=self.entities, language="en")
         
-        print(f"\n***************************************************")
-        print(f"                 Default List                      ")
-        print(f"***************************************************")
+        print(f"\n\t\t***************************************************")
+        print(f"\t\t                 Default List                      ")
+        print(f"\t\t***************************************************")
         anonymized_texts = self._anonymize(texts, results)
 
         # If true annotations are provided, evaluate the anonymization
