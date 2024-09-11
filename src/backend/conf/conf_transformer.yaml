@@ -1,23 +1,23 @@
 nlp_engine_name: transformers
 models:
-  -
-    lang_code: en
+  - lang_code: en
     model_name:
       spacy: en_core_web_lg
       transformers: obi/deid_roberta_i2b2
 
 ner_model_configuration:
   labels_to_ignore:
-  - O
-  aggregation_strategy: simple # "simple", "first", "average", "max"
-  stride: 16
-  alignment_mode: strict # "strict", "contract", "expand"
+    - O
+  aggregation_strategy: average
+  stride: 8
+  alignment_mode: expand
   model_to_presidio_entity_mapping:
     PER: PERSON
     ORG: ORGANIZATION
 
-   
-
-  low_confidence_score_multiplier: 0.4
+  low_confidence_score_multiplier: 0.5
   low_score_entity_names:
-  - ID
+    - ID
+    - PHONE_NUMBER
+    - EMAIL_ADDRESS
+    - CREDIT_CARD

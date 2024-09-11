@@ -1,0 +1,36 @@
+NLP Engine: spacy
+Model: en_core_web_lg
+Original Text: I use Verizon for my phone services.
+Ground Truth Annotated Text: I use <ORG> for my phone services.
+Anonymized Text: I use <ORG> for my phone services.
+Anonymization Details: [{'label': 'ORG', 'start': 6, 'end': 13}]
+
+========================================
+
+NLP Engine: spacy
+Model: en_core_web_lg
+Original Text: My primary phone provider is AT&T
+Ground Truth Annotated Text: My primary phone provider is <ORG>
+Anonymized Text: My primary phone provider is <ORG>
+Anonymization Details: [{'label': 'ORG', 'start': 29, 'end': 33}]
+
+========================================
+
+NLP Engine: spacy
+Model: en_core_web_lg
+Original Text: John Doe is the CEO of the company.
+Ground Truth Annotated Text: <PERSON> is the CEO of the company.
+Anonymized Text: <PERSON> is the CEO of the company.
+Anonymization Details: [{'label': 'PERSON', 'start': 0, 'end': 8}]
+
+========================================
+
+NLP Engine: spacy
+Model: en_core_web_lg
+Original Text: Jane Smith works at Google.
+Ground Truth Annotated Text: <PERSON> works at <ORG>.
+Anonymized Text: <PERSON> works at <ORG>.
+Anonymization Details: [{'label': 'PERSON', 'start': 0, 'end': 10}, {'label': 'ORG', 'start': 20, 'end': 26}]
+
+========================================
+

@@ -1,0 +1,12 @@
+pipeline:
+  - conf: src/backend/conf/conf_spacy.yaml
+    provider: SpacyAnonymizer
+    ground_truth_path: CROSSCOMP/conf/ground_truth.yaml
+
+  - conf: src/backend/conf/conf_spacy.yaml
+    provider: SpacyAnonymizer
+    ground_truth_path: CROSSCOMP/conf/ground_truth.yaml
+    
+  - conf: src/backend/conf/conf_spacy.yaml
+    provider: SpacyAnonymizer
+    ground_truth_path: CROSSCOMP/conf/ground_truth.yaml

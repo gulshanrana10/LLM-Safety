@@ -1,72 +1,57 @@
-import yaml
+import argparse
+
 from anonymizers.transformer_anonymizer import TransformerAnonymizer
 from anonymizers.spacy_anonymizer import SpacyAnonymizer
 from anonymizers.recognizer_anonymizer import RecognizerAnonymizer
 from anonymizers.default_anonymizer import DefaultAnonymizer
-import yaml
 
-def _get_text_from_ground_truth(ground_truth):
-    with open(ground_truth, 'r') as file:
-        data = yaml.safe_load(file)
-        # Extract text strings and annotations
-        texts = [item['text'] for item in data['texts']]
-        annotations = [item['annotations'] for item in data['texts']]
-        return texts, annotations
-def print_config_details(config):
-    """
-    Print details of the anonymization configuration.
-    
-    """
-    print("\t\t#################################################################")
-    print(f"\n╭─────────────────────────────────────────────────────────────╮")
-    print(f"│       Anonymization Configuration                           │")
-    print(f"├─────────────────────────────────────────────────────────────┤")
-    print(f"│ Configuration File: {config['conf'] if config['conf'] else 'None':<30} ")
-    print(f"│ Models File: {config['models'] if config['models'] else 'None':<30} ")
-    print(f"│ Entities to Anonymize: {', '.join(config['entities']):<30} ")
-    print(f"│ Provider: {config['provider'].__name__: <30} ")
-    print(f"│ Ground Truth File: {config['ground_truth'] if config['ground_truth'] else 'None':<30}")
-    print(f"├─────────────────────────────────────────────────────────────┤")
-    
+def _get_text():
+    parser = argparse.ArgumentParser(description="Anonymize PII in the provided text")
+    parser.add_argument('-t', '--text', 
+                        type=str, 
+                        required=False, 
+                        help='text from which the PII needs to be anonymized')
+    args = parser.parse_args()
+    if args.text:
+        return args.text
+    else:
+        texts = ["I use Verizon for my phone services",
+                 "My friend uses AT&T, the best CSP",
+                 "In TELUS, AUSF_UDM uses external HSM"]
+        return texts
 
 if __name__ == "__main__":
+    texts = _get_text()
     configs = [
-        {
-            "conf": "src\\backend\\conf\\conf_transformer.yaml",
-            "models": "src\\backend\\conf\\models_ner.yaml",
-            "entities": ["ORGANIZATION", "PERSON"],
-            "provider": TransformerAnonymizer,
-            "ground_truth": "src\\backend\\conf\\ground_truth.yaml"
-        },
-        {
-            "conf": "src\\backend\\conf\\conf_spacy.yaml",
-            "models": "src\\backend\\conf\\models_spacy.yaml",
-            "entities": ["ORGANIZATION", "PERSON"],
-            "provider": SpacyAnonymizer,
-            "ground_truth": "src\\backend\\conf\\ground_truth.yaml"
-        },
-        {
-            "conf": "src\\backend\\conf\\recognizer.yaml",
-            "models": None,
-            "entities": ["ORGANIZATION"],
-            "provider": RecognizerAnonymizer,
-            "ground_truth": "src\\backend\\conf\\ground_truth.yaml"
-        },
-        {
-            "conf": None,
-            "models": None,
-            "entities": ["ORGANIZATION", "PERSON"],
-            "provider": DefaultAnonymizer,
-            "ground_truth": "src\\backend\\conf\\ground_truth.yaml"
-        }
-    ]
+		{
+			"conf": "src/backend/conf/conf_transformer.yaml",
+			"models": "src/backend/conf/models_ner.yaml",
+			"entities": ["ORGANIZATION", "PERSON"],
+			"provider": TransformerAnonymizer
+		},
+		{
+			"conf": "src/backend/conf/conf_spacy.yaml",
+			"models": "src/backend/conf/models_spacy.yaml",
+			"entities": ["ORGANIZATION", "PERSON"],
+			"provider": SpacyAnonymizer
+		},
+		{
+			"conf": "src/backend/conf/recognizer.yaml",
+			"models": None,
+			"entities": ["ORGANIZATION"],
+			"provider": RecognizerAnonymizer
+		},
+		{
+			"conf": None,
+			"models": None,
+			"entities": ["ORGANIZATION", "PERSON", "IP_ADDRESS", "EMAIL_ADDRESS"],
+			"provider": DefaultAnonymizer
+		}
+	]
     
     for config in configs:
-        print_config_details(config)
-        texts, true_annotations = _get_text_from_ground_truth(config["ground_truth"])
         provider = config["provider"]
         anonymizer = provider(conf_file=config["conf"], 
-                              models_file=config["models"], 
-                              entities=config["entities"])
-        anonymizer.do_anonymize(texts, true_annotations=true_annotations)
-        print(f"╰─────────────────────────────────────────────────────────────╯\n")
+                        	  models_file=config["models"], 
+                           	  entities=config["entities"])
+        anonymizer.do_anonymize(texts)

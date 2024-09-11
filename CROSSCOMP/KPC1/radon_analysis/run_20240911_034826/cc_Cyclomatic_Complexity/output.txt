@@ -1,0 +1,42 @@
+Command: radon cc src/backend
+src\backend\main.py
+    F 8:0 _get_text - A
+src\backend\pipeline.py
+    F 29:0 execute_pipeline - A
+    F 5:0 _get_pipeline - A
+src\backend\server.py
+    F 25:0 text - A
+    F 29:0 process_text - A
+    C 21:0 TextRequest - A
+src\backend\anonymizers\anonymizer.py
+    M 16:4 Anonymizer._anonymize - A
+    C 8:0 Anonymizer - A
+    M 39:4 Anonymizer._analyze - A
+    M 58:4 Anonymizer.do_anonymize - A
+    M 9:4 Anonymizer.__init__ - A
+    M 70:4 Anonymizer._get_nlp_configuration - A
+src\backend\anonymizers\default_anonymizer.py
+    C 7:0 DefaultAnonymizer - A
+    M 16:1 DefaultAnonymizer.do_anonymize - A
+    M 8:1 DefaultAnonymizer.__init__ - A
+    M 13:1 DefaultAnonymizer._get_nlp_configuration - A
+src\backend\anonymizers\recognizer_anonymizer.py
+    C 7:0 RecognizerAnonymizer - A
+    M 20:1 RecognizerAnonymizer.do_anonymize - A
+    M 8:1 RecognizerAnonymizer.__init__ - A
+    M 13:1 RecognizerAnonymizer._get_nlp_configuration - A
+src\backend\anonymizers\spacy_anonymizer.py
+    M 21:4 SpacyAnonymizer.extract_and_anonymize - B
+    M 68:4 SpacyAnonymizer._analyze - B
+    C 7:0 SpacyAnonymizer - A
+    M 13:4 SpacyAnonymizer._get_nlp_configuration - A
+    M 50:4 SpacyAnonymizer._generate_annotated_text - A
+    M 120:4 SpacyAnonymizer.do_anonymize - A
+    M 8:4 SpacyAnonymizer.__init__ - A
+    M 61:4 SpacyAnonymizer._extract_entities - A
+src\backend\anonymizers\transformer_anonymizer.py
+    C 6:0 TransformerAnonymizer - A
+    M 12:1 TransformerAnonymizer._get_nlp_configuration - A
+    M 7:1 TransformerAnonymizer.__init__ - A
+
+================================================================================

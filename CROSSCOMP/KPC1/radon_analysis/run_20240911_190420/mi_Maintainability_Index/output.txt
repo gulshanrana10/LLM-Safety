@@ -1,0 +1,11 @@
+Command: radon mi src/backend
+src\backend\main.py - A
+src\backend\pipeline.py - A
+src\backend\server.py - A
+src\backend\anonymizers\anonymizer.py - A
+src\backend\anonymizers\default_anonymizer.py - A
+src\backend\anonymizers\recognizer_anonymizer.py - A
+src\backend\anonymizers\spacy_anonymizer.py - A
+src\backend\anonymizers\transformer_anonymizer.py - A
+
+================================================================================

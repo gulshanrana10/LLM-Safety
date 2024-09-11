@@ -1,0 +1,31 @@
+texts:
+  - id: 1
+    text: "I use Verizon for my phone services."
+    annotations:
+      - label: "ORG"
+        start: 6
+        end: 13
+
+  - id: 2
+    text: "My primary phone provider is AT&T"
+    annotations:
+      - label: "ORG"
+        start: 29
+        end: 33
+
+  - id: 3
+    text: "John Doe is the CEO of the company."
+    annotations:
+      - label: "PERSON"
+        start: 0
+        end: 8
+
+  - id: 4
+    text: "Jane Smith works at Google."
+    annotations:
+      - label: "PERSON"
+        start: 0
+        end: 10
+      - label: "ORG"
+        start: 20
+        end: 26

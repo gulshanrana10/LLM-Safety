@@ -1,18 +1,16 @@
 recognizers:
-  -
-    name: "Zip code Recognizer"
+  - name: "Zip code Recognizer"
     supported_language: "de"
     patterns:
-      -
-        name: "zip code (weak)"
+      - name: "zip code (weak)"
         regex: "(\\b\\d{5}(?:\\-\\d{4})?\\b)"
         score: 0.01
     context:
-    - zip
-    - code
+      - zip
+      - code
     supported_entity: "ZIP"
-  -
-    name: "CSP recognizer"
+  
+  - name: "CSP recognizer"
     supported_language: "en"
     supported_entity: "ORGANIZATION"
     deny_list:
@@ -37,3 +35,33 @@ recognizers:
       - Tmobile
       - TMobile
       - TMO
+
+  - name: "Person Name Recognizer"
+    supported_language: "en"
+    supported_entity: "PERSON"
+    patterns:
+      - name: "common names"
+        regex: "(\\b[A-Z][a-z]+\\b)"
+        score: 0.5
+    context:
+      - person
+      - name
+    deny_list:
+      - "John"
+      - "Jane"
+      - "Doe"
+
+  - name: "Organization Name Recognizer"
+    supported_language: "en"
+    supported_entity: "ORGANIZATION"
+    patterns:
+      - name: "common org names"
+        regex: "(\\b(Inc|LLC|Corp|Ltd|PLC)\\b)"
+        score: 0.5
+    context:
+      - organization
+      - company
+    deny_list:
+      - "Microsoft"
+      - "Google"
+      - "Apple"

@@ -1,0 +1,17 @@
+Global Evaluation Metrics:
+Precision: 1.0000
+Recall: 1.0000
+F1 Score: 1.0000
+
+Entity-Specific Evaluation Metrics:
+Entity: ORG
+  Precision: 1.0000
+  Recall: 1.0000
+  F1 Score: 1.0000
+Entity: PERSON
+  Precision: 1.0000
+  Recall: 1.0000
+  F1 Score: 1.0000
+
+Execution Time:
+Step Execution Time: 0.99 seconds

@@ -1,0 +1,107 @@
+Command: radon hal src/backend
+src\backend\main.py:
+    h1: 1
+    h2: 2
+    N1: 1
+    N2: 2
+    vocabulary: 3
+    length: 3
+    calculated_length: 2.0
+    volume: 4.754887502163469
+    difficulty: 0.5
+    effort: 2.3774437510817346
+    time: 0.1320802083934297
+    bugs: 0.0015849625007211565
+src\backend\pipeline.py:
+    h1: 2
+    h2: 4
+    N1: 2
+    N2: 4
+    vocabulary: 6
+    length: 6
+    calculated_length: 10.0
+    volume: 15.509775004326936
+    difficulty: 1.0
+    effort: 15.509775004326936
+    time: 0.861654166907052
+    bugs: 0.005169925001442312
+src\backend\server.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+src\backend\anonymizers\anonymizer.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+src\backend\anonymizers\default_anonymizer.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+src\backend\anonymizers\recognizer_anonymizer.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+src\backend\anonymizers\spacy_anonymizer.py:
+    h1: 5
+    h2: 16
+    N1: 10
+    N2: 18
+    vocabulary: 21
+    length: 28
+    calculated_length: 75.60964047443682
+    volume: 122.9848878378053
+    difficulty: 2.8125
+    effort: 345.8949970438274
+    time: 19.21638872465708
+    bugs: 0.04099496261260177
+src\backend\anonymizers\transformer_anonymizer.py:
+    h1: 1
+    h2: 2
+    N1: 1
+    N2: 2
+    vocabulary: 3
+    length: 3
+    calculated_length: 2.0
+    volume: 4.754887502163469
+    difficulty: 0.5
+    effort: 2.3774437510817346
+    time: 0.1320802083934297
+    bugs: 0.0015849625007211565
+
+================================================================================

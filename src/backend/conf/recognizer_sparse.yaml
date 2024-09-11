@@ -1,3 +1,4 @@
+nlp_engine_name: sparse
 recognizers:
   -
     name: "CSP Recognizer"
